@@ -1,0 +1,332 @@
+/* === Scrollbar Hidden But Scrollable === */
+/* Hide scrollbar while keeping scroll functionality */
+.element {
+  scrollbar-width: none;          /* Firefox */
+  -ms-overflow-style: none;       /* IE & Edge */
+}
+/* Hide scrollbar in WebKit browsers (Chrome, Safari, Opera) */
+.element::-webkit-scrollbar {
+  display: none;
+}
+
+/* used image::
+https://www.freepik.com/free-photo/young-men-looking-how-woman-smoking-cigarette_4391667.htm#fromView=search&page=2&position=46&uuid=5952da98-4721-4358-9974-61b8e90d8390&query=fashion+men+and+women */
+
+/* === Hero Section === */
+/* Main hero container with background image, centered and covering */
+.home {
+  background: url("../access/home.jpg") center/cover no-repeat;
+  min-height: 85vh;       /* Minimum height to fill most viewport height */
+  width: 90%;            /* Width relative to parent/container */
+  margin: 0 auto;        /* Center horizontally */
+}
+
+/* Hero content wrapper: flexbox vertically and horizontally centers children */
+.home .home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  animation: fadeInUp 1s ease-out forwards;  /* Smooth fade-in + slide-up */
+}
+
+/* Hero main heading style */
+.home .home-content h1 {
+  font-size: 84px;
+  text-align: center;
+  background: rgba(9, 9, 9, 0.4); /* Semi-transparent black overlay */
+  color: #fff;
+  padding: 16px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  width: 95%;
+  margin-bottom: 15px;
+}
+
+/* Hero subheading with initial hidden state and delayed fade-in animation */
+.home .subheading {
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: 1.6px;
+  opacity: 0;                       /* Start hidden */
+  transform: translateY(30px);     /* Start slightly down */
+  animation: fadeInUp 1.4s ease-out forwards;
+  animation-delay: 0.4s;           /* Delay start */
+}
+
+/* === Call to Action Button === */
+/* Primary button style with gradient, rounded corners, shadows */
+.cta-button {
+  background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+  color: #fff;
+  padding: 18px 40px;
+  width: 400px;
+  max-width: 90vw;           /* Responsive max width */
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 15px rgba(255, 75, 43, 0.3);
+  user-select: none;         /* Disable text selection */
+  outline: none;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1.8s ease-out forwards;
+  animation-delay: 0.7s;
+}
+
+/* Hover and focus state for the button with color and shadow changes */
+.cta-button:hover,
+.cta-button:focus {
+  background: linear-gradient(135deg, #ff4b2b 0%, #ff416c 100%);
+  box-shadow: 0 12px 20px rgba(255, 75, 43, 0.5);
+  transform: translateY(-3px);   /* Slight upward movement */
+}
+
+/* Active (pressed) state for button */
+.cta-button:active {
+  transform: translateY(0);      /* Reset translation */
+  box-shadow: 0 6px 10px rgba(255, 75, 43, 0.2);
+}
+
+/* === Features Section === */
+/* Flex container for feature boxes, centered */
+.features {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 80px 0 10px;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1.3s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+/* Individual feature box style with gradient background and padding */
+.features .feature-box {
+  margin: 20px;
+  padding: 18px;
+  width: 400px;
+  text-align: center;
+  color: #fff;
+  font-size: 22px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+}
+
+.feature-icon {
+ margin: 10px 0 10px;
+}
+
+/* === Recommended Section === */
+/* Container with soft pink background and padding */
+.recommended-section {
+  margin: 4rem auto;
+  background-color: #fcefee;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1.4s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+/* Heading alignment inside recommended section */
+.recommended-section h2 {
+  text-align: center;
+}
+
+/* Text styling inside banner */
+.recommended-banner p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+/* === Show More Button === */
+/* Container centers the button */
+.show-more-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Show more button style */
+.show-more-button {
+  background-color: #111;
+  color: white;
+  padding: 16px 18px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  width: 290px;
+  transition: background 0.3s ease;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Hover effect for show more button */
+.show-more-button:hover {
+  background-color: #444;
+}
+
+/* === Product Badges === */
+/* New badge positioned top-left with red background and pop animation */
+.new-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background-color: crimson;
+  color: white;
+  font-size: 0.75rem;
+  padding: 4px 6px;
+  border-radius: 4px;
+  animation: popIn 0.4s ease-out;
+}
+
+/* Heart icon for favorites positioned top-right */
+.heart-icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  color: #999;
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+/* Change heart color on hover */
+.heart-icon:hover {
+  color: red;
+}
+
+/* === Animations === */
+/* Fade in and slide up animation keyframes */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Pop in animation keyframes (scale and opacity) */
+@keyframes popIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* === Responsive Breakpoints === */
+
+/* TABLET: max-width 1024px */
+@media (max-width: 1024px) {
+  .home .home-content h1 {
+    font-size: 64px;
+    padding: 14px 18px;
+  }
+
+  .home .subheading {
+    font-size: 20px;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .features {
+    flex-direction: column;
+  }
+
+  .features .feature-box {
+    width: 80%;
+    font-size: 20px;
+  }
+
+  .cta-button {
+    width: 300px;
+    padding: 16px 32px;
+    font-size: 16px;
+  }
+}
+
+/* MOBILE: max-width 768px */
+@media (max-width: 768px) {
+  .home {
+    background-position: center top;
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .home .home-content {
+    padding-top: 40px;
+  }
+
+  .home .home-content h1 {
+    font-size: 42px;
+    width: 100%;
+    line-height: 1.2;
+  }
+
+  .home .subheading {
+    font-size: 18px;
+    letter-spacing: 1.2px;
+  }
+
+  .cta-button {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 16px;
+  }
+
+  .features .feature-box {
+    width: 95%;
+    font-size: 18px;
+    margin: 12px 0;
+  }
+
+  .recommended-section {
+    padding: 1.5rem;
+  }
+
+  .recommended-banner p {
+    font-size: 1rem;
+  }
+
+  .show-more-button {
+    width: 90%;
+  }
+}
+
+/* SMALL MOBILE: max-width 480px */
+@media (max-width: 480px) {
+  .home .home-content h1 {
+    font-size: 32px;
+    padding: 10px 14px;
+  }
+
+  .home .subheading {
+    font-size: 16px;
+  }
+
+  .cta-button {
+    font-size: 14px;
+    padding: 12px 16px;
+  }
+
+  .recommended-banner p {
+    font-size: 0.95rem;
+  }
+}

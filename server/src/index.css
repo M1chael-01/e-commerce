@@ -1,0 +1,113 @@
+/* === Reset all links to have no underline === */
+* {
+  text-decoration: none; /* Remove underline from all elements */
+}
+
+/* === Loader Container === */
+.loader {
+  height: 100vh;                /* Full viewport height */
+  width: 100%;                 /* Full width */
+  background-color: #ffffff;   /* White background */
+  display: flex;               /* Use flexbox for layout */
+  flex-direction: column;      /* Stack children vertically */
+  justify-content: center;     /* Center children vertically */
+  align-items: center;         /* Center children horizontally */
+  position: relative;          /* Relative positioning for absolute children */
+  overflow: hidden;            /* Hide overflow content */
+  font-family: 'Montserrat', sans-serif; /* Set font */
+}
+
+/* === Brand Text Styling === */
+.loader__brand {
+  font-size: 64px;             /* Large font size for branding */
+  font-weight: 900;            /* Extra bold font weight */
+  color: #111;                 /* Dark text color */
+  letter-spacing: 12px;        /* Space out letters */
+  display: flex;               /* Use flexbox to layout letters */
+  gap: 8px;                   /* Gap between each letter */
+  animation: loaderFadeIn 1s ease-in-out forwards; /* Fade and scale in animation */
+  z-index: 2;                 /* Ensure brand text appears above bubbles */
+}
+
+/* Individual letter animations */
+.loader__brand span {
+  opacity: 0;                  /* Start fully transparent */
+  transform: translateY(-50px); /* Start offset above the view */
+  animation: slideInLetter 0.6s ease forwards; /* Slide down and fade in */
+}
+
+/* Stagger animation delays for each letter for cascading effect */
+.loader__brand span:nth-child(1) { animation-delay: 0.1s; }
+.loader__brand span:nth-child(2) { animation-delay: 0.2s; }
+.loader__brand span:nth-child(3) { animation-delay: 0.3s; }
+.loader__brand span:nth-child(4) { animation-delay: 0.4s; }
+.loader__brand span:nth-child(5) { animation-delay: 0.5s; }
+
+/* === Bubbles Container === */
+.loader__bubbles {
+  position: absolute;          /* Position bubbles relative to loader container */
+  bottom: 60px;                /* Place bubbles 60px from bottom */
+  display: flex;               /* Layout bubbles in a row */
+  gap: 20px;                  /* Space between bubbles */
+  z-index: 1;                 /* Place bubbles behind brand text */
+}
+
+/* Individual bubble styling and animation */
+.loader__bubble {
+  width: 16px;                 /* Circle width */
+  height: 16px;                /* Circle height */
+  background-color: #ff416c;  /* Pinkish-red bubble color */
+  border-radius: 50%;          /* Make bubble perfectly round */
+  animation: bubbleUp 2s ease-in-out infinite; /* Continuous up/down floating animation */
+  opacity: 0.7;                /* Slightly transparent */
+}
+
+/* Stagger bubble animation delays to create a natural, wave-like effect */
+.loader__bubble:nth-child(1) { animation-delay: 0s; }
+.loader__bubble:nth-child(2) { animation-delay: 0.3s; }
+.loader__bubble:nth-child(3) { animation-delay: 0.6s; }
+.loader__bubble:nth-child(4) { animation-delay: 0.9s; }
+.loader__bubble:nth-child(5) { animation-delay: 1.2s; }
+.loader__bubble:nth-child(6) { animation-delay: 1.5s; }
+
+/* === Animations === */
+
+/* Slide letters in from above with fade-in */
+@keyframes slideInLetter {
+  from {
+    opacity: 0;                  /* Start invisible */
+    transform: translateY(-50px); /* Start offset above */
+  }
+  to {
+    opacity: 1;                  /* Fully visible */
+    transform: translateY(0);    /* In normal position */
+  }
+}
+
+/* Fade and scale the entire loader brand text */
+@keyframes loaderFadeIn {
+  0% {
+    opacity: 0;                 /* Start invisible */
+    transform: scale(0.95);     /* Slightly smaller */
+  }
+  100% {
+    opacity: 1;                 /* Fully visible */
+    transform: scale(1);        /* Normal scale */
+  }
+}
+
+/* Bubble vertical floating animation with opacity change */
+@keyframes bubbleUp {
+  0% {
+    transform: translateY(0);   /* Start position */
+    opacity: 0.8;               /* Slightly transparent */
+  }
+  50% {
+    transform: translateY(-20px); /* Float upwards */
+    opacity: 1;                 /* Fully opaque */
+  }
+  100% {
+    transform: translateY(0);   /* Return to start */
+    opacity: 0.6;               /* More transparent */
+  }
+}

@@ -1,0 +1,340 @@
+/* ================================
+   🌐 Import Google Fonts
+=================================== */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Montserrat:wght@100..900&family=Open+Sans:wght@300..800&family=Poppins:wght@100..900&family=Quicksand:wght@300..700&family=Roboto:wght@100..900&display=swap');
+
+/* ================================
+   🧭 Header Base
+=================================== */
+.header {
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* ================================
+   📦 Navigation Container
+=================================== */
+.nav.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem 2rem;
+  flex-wrap: wrap;
+}
+
+/* ================================
+   ⬅️ Nav Left: Logo & Toggle
+=================================== */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  font-size: 34px;
+  letter-spacing: 1.4px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #222;
+}
+
+.logo span {
+  color: red;
+}
+
+.logo img {
+  height: 40px;
+}
+
+/* ================================
+   🔍 Nav Center: Search Input
+=================================== */
+.nav-center {
+  flex: 1;
+  max-width: 500px;
+  padding: 0 1rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  font-size: 17px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+}
+
+/* Dropdown below search */
+.search-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  z-index: 999;
+}
+.search-dropdown img{
+  width: 80px;
+  height: 110px;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.3rem;
+  text-decoration: none;
+  color: #000;
+}
+
+.dropdown-thumb {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+/* ================================
+   ➡️ Nav Right: Links & Cart
+=================================== */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  font-size: 20px;
+  font-weight: 500;
+  color: #222;
+  text-decoration: none;
+  padding: 0.5rem;
+  margin: 0 10px;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #ff4d6d;
+}
+
+.search-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.7rem 2rem 0.7rem 2rem;
+  font-size: 17px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  outline: none;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #f6f6f6;
+  box-shadow: 0 0 5px rgba(36, 36, 36, 0.2);
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #aaa;
+}
+
+.clear-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: #aaa;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.clear-icon:hover {
+  color: #ff4d6d;
+}
+
+.search-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  z-index: 999;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-dropdown img {
+  width: 80px;
+  height: 110px;
+  object-fit: cover;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.3rem;
+  text-decoration: none;
+  color: #000;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+}
+
+/* ================================
+   ⬇️ Dropdown Menu (Desktop)
+=================================== */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  grid-template-columns: repeat(3, 150px);
+  gap: 1rem;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.nav-links li:hover .dropdown {
+  display: grid;
+}
+
+.dropdown a {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.dropdown a:hover {
+  color: #ff4d6d;
+}
+
+/* ================================
+   🛒 Cart Icon
+=================================== */
+.cart {
+  position: relative;
+  cursor: pointer;
+}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: #ff4d6d;
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+/* ================================
+   📱 Mobile Menu Toggle
+=================================== */
+.menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
+/* ================================
+   📱 Responsive Styles
+=================================== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-center {
+    order: 3;
+    width: 100%;
+    margin-top: 1rem;
+    display: block;
+  }
+
+  .cart {
+    order: 2;
+  }
+
+  .nav-right {
+    width: 100%;
+    order: 1;
+    justify-content: flex-end;
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 0.5rem 0;
+  }
+
+  .dropdown {
+    display: none !important; /* Disable dropdowns on mobile */
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-center {
+    order: 3;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .cart {
+    order: 2;
+  }
+
+  .nav-right {
+    order: 1;
+    width: 100%;
+    justify-content: flex-end;
+  }
+}

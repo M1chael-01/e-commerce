@@ -1,0 +1,71 @@
+/* ========== Layout Structure ========== */
+
+/* Container with flex layout to align sidebar and main content horizontally */
+.women-layout {
+  display: flex;
+}
+
+/* Main content section that grows to take up remaining space next to any sidebar */
+.main-content {
+  flex: 1;
+}
+
+/* Top content section used for banners or introductory text */
+.top-content-inner {
+  position: relative;  /* Allows layered elements inside (like overlays or gradients) */
+  z-index: 2;          /* Ensures this content appears above background elements */
+  color: #fff;         /* White text for contrast, assuming dark background */
+  text-align: center;  /* Centered text for banners or section headings */
+  max-width: 600px;    /* Limit line length for readability */
+  padding: 20px;       /* Internal spacing around text */
+}
+
+
+/* ========== Product Grid Display ========== */
+
+/* Grid container for displaying product cards responsively */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(370px, 1fr)); 
+  /* Automatically fit as many columns as possible with a minimum width of 370px */
+
+  gap: 24px;             /* Space between grid items */
+  padding: 40px;         /* Padding inside the grid area */
+  margin: 40px 300px;    /* Vertical margin and horizontal "side gutters" */
+}
+
+
+/* ========== Product Card Styling ========== */
+
+/* Basic card styling for each product */
+.product-card {
+  background: #fff;                /* White background for a clean look */
+  border: 1px solid #eee;          /* Light gray border for subtle separation */
+  border-radius: 8px;              /* Rounded corners for modern UI */
+  padding: 16px;                   /* Internal spacing */
+  text-align: center;              /* Centered content inside the card */
+  transition: box-shadow 0.3s ease;/* Smooth animation when hovering */
+}
+
+/* Ensure product images scale correctly and have rounded edges */
+.product-card img {
+  max-width: 100%;         /* Keep image within the card width */
+  border-radius: 6px;      /* Slight rounding to soften image corners */
+}
+
+/* Product name/title styling */
+.product-card h3 {
+  margin: 12px 0 8px;      /* Space above and below the heading */
+  font-size: 18px;         /* Readable size for card titles */
+}
+
+/* Product description or price text */
+.product-card p {
+  font-weight: 600;        /* Bold text for emphasis (e.g. price) */
+  color: #333;             /* Dark gray for readability */
+}
+
+/* Hover effect for user interaction feedback */
+.product-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow pop-up effect */
+}

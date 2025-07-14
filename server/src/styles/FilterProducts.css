@@ -1,0 +1,291 @@
+/* === Product Grid Container === */
+/* Flex container holding product cards, wraps with gaps and centers content */
+.product-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;               /* Space between cards */
+  padding: 2rem;
+  margin: 10px 300px 20px;   /* Large horizontal margin - consider responsive adjustments */
+  animation: fadeIn 1s ease-in-out; /* Smooth fade-in on load */
+}
+
+/* === Individual Product Card === */
+/* Card with fixed width, white background, subtle border, padding, rounded corners */
+/* Starts hidden (opacity 0) with fadeInCard animation to smoothly appear */
+.product-card {
+  width: 340px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  opacity: 0;
+  animation: fadeInCard 0.8s ease-out forwards;
+}
+
+/* Hover effect: subtle shadow and slight upward movement for interactivity */
+.product-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+/* === Product Image === */
+/* Images fill card width with fixed height, cover object fit, rounded corners */
+/* Zoom effect on hover */
+.product-card img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.05);
+}
+
+/* === Product Title === */
+/* Margins and font size for clear heading */
+/* Color changes on hover to highlight */
+.product-card h3 {
+  margin: 12px 0 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+  transition: color 0.3s ease;
+}
+
+.product-card:hover h3 {
+  color: #e63946;
+}
+
+/* === Product Price === */
+/* Bold text for price, muted color by default, changes color on hover */
+.product-card p {
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.product-card:hover p {
+  color: #e63946;
+}
+
+/* === Discount Badge === */
+/* Badge hidden by default (opacity 0), appears on card hover */
+/* Red background with white text for discount emphasis */
+.product-discount, .pagination {
+  display: inline-block;
+  background: #e63946;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.product-card:hover .product-discount {
+  opacity: 1;
+}
+
+/* === Price Group (Discounted + Original) === */
+/* Flex container for displaying discounted and original prices side-by-side */
+.product-price-discounted {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: baseline;
+}
+
+/* Original price with strikethrough and muted gray color */
+.original-price {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 22px;
+}
+
+/* Discounted price: bold, red, and transitions color on hover */
+.discounted-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #e63946;
+  transition: color 0.3s ease;
+}
+
+.product-card:hover .discounted-price {
+  color: #d62828; /* Darker red on hover */
+}
+
+/* === Section Heading === */
+/* Extra bottom margin for spacing */
+.top h2 {
+  margin-bottom: 45px;
+}
+
+/* === Pagination === */
+/* Centered container for pagination buttons with gaps */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 2rem auto 3rem;
+  width: 100%;
+}
+
+/* Pagination buttons styled with padding, border, rounded corners */
+/* Fade-in animation and pointer cursor for interactivity */
+.page-btn {
+  padding: 8px 14px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  opacity: 0;
+  animation: fadeInPagination 1s ease-out forwards;
+}
+
+/* Hover effect for pagination buttons */
+.page-btn:hover {
+  background-color: #f1f1f1;
+}
+
+/* Active pagination button style: black background with white bold text */
+.page-btn.active {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  border-color: black;
+}
+
+/* === No Products Box === */
+/* Centered box with padding, white background, rounded corners and subtle shadow */
+.no-products-box {
+  padding: 2rem;
+  text-align: center;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  max-width: 600px;
+  margin: 3rem auto;
+}
+
+.no-products-box h2 {
+  font-size: 22px;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.no-products-box button {
+  background-color: #e63946;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.no-products-box button:hover {
+  background-color: #d62828;
+}
+
+/* --- Optional: Improved button style in pagination --- */
+/* Larger buttons with red background and smooth hover */
+.pagination button {
+  padding: 12px 24px;
+  background-color: #e63946;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: #d62828;
+}
+
+/* Normal price styling separate from discounted */
+.normal-price {
+  font-weight: 700;
+  font-size: 22px;
+  color: #222;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.product-card:hover .normal-price {
+  color: #e63946;
+}
+
+/* === Animations === */
+/* Fade in animation for container */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Fade in with upward translate for product cards */
+@keyframes fadeInCard {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade in animation for pagination buttons */
+@keyframes fadeInPagination {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* === Responsive adjustments === */
+@media (max-width: 1024px) {
+  .product-flex {
+    margin: 10px 40px 20px; /* Reduced horizontal margins */
+  }
+
+  .product-card {
+    width: 280px; /* Smaller cards on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .product-flex {
+    margin: 10px 20px 20px;
+    gap: 1rem; /* Slightly smaller gap */
+  }
+
+  .product-card {
+    width: 45vw; /* Nearly half viewport width */
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-flex {
+    margin: 10px 10px 20px;
+    gap: 0.8rem;
+  }
+
+  .product-card {
+    width: 90vw; /* Almost full width on small devices */
+    max-width: none;
+  }
+
+  .product-card img {
+    height: auto;      /* Allow height to scale with width */
+    max-height: 300px; /* Limit max height on small screens */
+  }
+}

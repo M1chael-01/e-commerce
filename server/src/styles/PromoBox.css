@@ -1,0 +1,145 @@
+/* ===============================
+   Promo box container - centered, absolute positioning with slide-up animation
+=================================*/
+.promo-box {
+  position: absolute;
+  top: 10%;               /* Vertical position */
+  left: 50%;              /* Center horizontally */
+  transform: translate(-50%, 50%); /* Shift left by 50% width, down by 50% height */
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1rem;
+  margin: 3rem 0;
+  z-index: 1000;          /* Above other content */
+  animation: slideUp 0.6s ease-out forwards; /* Animate entry */
+  max-width: 90vw;        /* Responsive max width */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+/* Close button at top-right inside promo box */
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* Hover & focus styles improve accessibility and UX */
+.close-btn:hover,
+.close-btn:focus {
+  color: #d10061;
+  outline: none;
+}
+
+/* Slide-up animation keyframes */
+@keyframes slideUp {
+  from {
+    transform: translate(-50%, 100%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 20%);
+    opacity: 1;
+  }
+}
+
+/* Inner container with glowing dashed border */
+.promo-glow {
+  position: relative;
+  width: 400px;
+  max-width: 100%;            /* Responsive width */
+  background: linear-gradient(135deg, #ffe0ec, #fff3f8);
+  padding: 2.4rem;
+  border-radius: 16px;
+  border: 2px dashed #ff0077;
+  box-shadow: 0 0 24px rgba(255, 0, 128, 0.2);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Badge in top-left corner with pulsing effect */
+.promo-badge {
+  position: absolute;
+  top: -14px;
+  left: 16px;
+  display: inline-block;
+  background: #ff0077;
+  color: white;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  animation: pulseBadge 1.5s infinite;
+  user-select: none; /* Prevent accidental text selection */
+}
+
+/* Badge pulse animation */
+@keyframes pulseBadge {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+/* Title inside promo box */
+.promo-title {
+  font-size: 1.5rem;
+  color: #d10061;
+  margin: 1rem 0 0.5rem;
+  font-weight: 700;
+}
+
+/* Subtitle or descriptive text */
+.promo-subtext {
+  color: #333;
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Call-to-action button styling */
+.promo-btn {
+  display: inline-block;
+  background: #d10061;
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  user-select: none; /* Prevent text selection */
+  border: none;
+}
+
+/* Hover and focus styles for button */
+.promo-btn:hover,
+.promo-btn:focus {
+  background: #a8004d;
+  outline: none;
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 480px) {
+  .promo-glow {
+    padding: 1.8rem 1.2rem;
+    width: 90vw; /* Full width for smaller devices */
+  }
+  
+  .promo-title {
+    font-size: 1.25rem;
+  }
+  
+  .promo-btn {
+    width: 100%;    /* Full width button on mobile */
+    padding: 12px 0;
+    font-size: 1rem;
+  }
+}

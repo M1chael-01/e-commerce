@@ -1,0 +1,126 @@
+/* === CSS Variables for Consistent Theming === */
+:root {
+  --cta-color: #ff0077; /* Primary CTA pink color */
+  --cta-hover: #cc005f; /* Darker pink for hover state */
+  --text-dark: #333; /* Dark gray for main text */
+  --shadow-color: rgba(255, 0, 128, 0.2); /* Light pink shadow for glow */
+  --shadow-color-strong: rgba(255, 0, 128, 0.6); /* Stronger pink shadow for pulse effect */
+}
+
+/* === CTA Box Container Styling & Positioning === */
+.cta-box {
+  position: absolute; /* Positioned relative to nearest positioned ancestor */
+  top: 10%; /* 10% down from the top */
+  left: 65%; /* 65% from the left */
+  transform: translate(-50%, 50%); /* Shift left by 50% of own width, down by 50% of own height */
+  display: flex; /* Use flexbox for child alignment */
+  justify-content: center; /* Center content horizontally */
+  padding: 3rem 1rem; /* Vertical and horizontal padding */
+  margin: 3rem 0; /* Vertical margin */
+  opacity: 0; /* Start hidden */
+  animation: slideUp 0.6s ease-out forwards; /* Animate sliding up and fading in */
+}
+
+/* === Slide Up Animation for Showing CTA === */
+@keyframes slideUp {
+  from {
+    transform: translate(-10%, 100%); /* Start slightly to left and fully below view */
+    opacity: 0; /* Fully transparent */
+  }
+  to {
+    transform: translate(-10%, 20%); /* Move up and become visible */
+    opacity: 1; /* Fully opaque */
+  }
+}
+
+/* === Show class overrides display for visibility === */
+.cta-box.show {
+  display: flex; /* Ensure flex display when shown */
+}
+
+/* === CTA Content Box with Glowing Effect === */
+.cta-glow {
+  background: #fff; /* White background */
+  padding: 2rem 3rem; /* Inner spacing */
+  border-radius: 16px; /* Rounded corners */
+  text-align: center; /* Center text */
+  max-width: 600px; /* Max width constraint */
+  animation: pulseGlow 2s infinite; /* Repeated glow pulse */
+}
+
+/* === Glow Pulse Animation for CTA === */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px var(--shadow-color); /* Soft glow */
+  }
+  50% {
+    box-shadow: 0 0 20px var(--shadow-color-strong); /* Stronger glow at mid animation */
+  }
+}
+
+/* === Headline Styling === */
+.cta-headline {
+  font-size: 2rem; /* Large text */
+  font-weight: bold; /* Bold weight */
+  color: var(--cta-color); /* Pink theme color */
+  margin-bottom: 1rem; /* Spacing below */
+}
+
+/* === Subtext Styling === */
+.cta-text {
+  font-size: 1.2rem; /* Slightly larger than normal text */
+  color: var(--text-dark); /* Dark gray */
+  margin-bottom: 1.5rem; /* Space after text */
+}
+
+/* === Container for Action Buttons/Links === */
+.cta-actions {
+  display: flex; /* Flexbox layout */
+  justify-content: center; /* Center horizontally */
+  gap: 1rem; /* Space between items */
+  flex-wrap: wrap; /* Wrap to next line if needed */
+}
+
+/* === Primary CTA Button Styling === */
+.cta-button.big {
+  padding: 12px 28px; /* Padding around text */
+  background: var(--cta-color); /* Primary pink background */
+  color: white; /* White text */
+  font-weight: bold; /* Bold font */
+  border-radius: 8px; /* Rounded corners */
+  border: none; /* No border */
+  font-size: 16px; /* Medium font size */
+  text-decoration: none; /* Remove underline */
+  transition: background 0.3s ease; /* Smooth background transition on hover */
+}
+
+/* === Primary CTA Button Hover Effect === */
+.cta-button.big:hover {
+  background: var(--cta-hover); /* Darker pink on hover */
+}
+
+/* === Secondary CTA Link Styling === */
+.cta-secondary {
+  text-decoration: underline; /* Underlined text */
+  color: #555; /* Medium gray */
+  font-size: 15px; /* Smaller font size */
+  align-self: center; /* Vertically center within flex container */
+}
+
+/* === Close Button Styling === */
+.cta-close {
+  position: absolute; /* Position relative to CTA box */
+  top: 12px; /* Near top right corner */
+  right: 16px;
+  background: transparent; /* No background */
+  border: none; /* No border */
+  font-size: 24px; /* Large icon/text */
+  color: #999; /* Light gray */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: color 0.2s ease; /* Smooth color change */
+}
+
+/* === Close Button Hover Effect === */
+.cta-close:hover {
+  color: #000; /* Darker color on hover */
+}

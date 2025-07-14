@@ -1,0 +1,169 @@
+/* Main container for the shopping menu sidebar */
+.shopping-menu {
+  width: 250px;                     /* Fixed width */
+  padding: 1rem;                   /* Inner spacing */
+  background-color: #fff;          /* White background */
+  border: 1px solid #eee;          /* Light border */
+  border-radius: 8px;              /* Rounded corners */
+  position: fixed;                 /* Fixed position on screen */
+  top: 100px;                     /* Distance from the top of viewport */
+  height: 100vh;                  /* Full viewport height */
+  overflow-y: auto;               /* Scroll vertically if content overflows */
+  font-family: 'Arial', sans-serif; /* Font styling */
+  
+  /* Scrollbar styling */
+  scrollbar-width: thin;           /* Firefox scrollbar width */
+  scrollbar-color: #e5004c #f0f0f0; /* Firefox scrollbar thumb and track colors */
+}
+
+/* Custom scrollbar styles for WebKit browsers */
+.shopping-menu::-webkit-scrollbar {
+  width: 8px;
+}
+.shopping-menu::-webkit-scrollbar-thumb {
+  background-color: #e5004c;       /* Pink/red thumb */
+  border-radius: 10px;
+}
+.shopping-menu::-webkit-scrollbar-track {
+  background-color: #f0f0f0;       /* Light track */
+  border-radius: 10px;
+}
+
+/* Section for filters inside the menu */
+.menu-filters {
+  border-top: 1px solid #eee;      /* Divider line */
+  padding-top: 1.25rem;
+  margin-top: 1rem;
+}
+
+/* Filter section headers */
+.menu-filters h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #e5004c;                  /* Pink/red color */
+  letter-spacing: 0.03em;
+  text-transform: uppercase;       /* Uppercase text */
+  border-left: 4px solid #e5004c;  /* Left colored bar */
+  padding-left: 0.5rem;
+}
+
+/* Styling for select dropdowns and range inputs */
+.shopping-menu select,
+.menu-filters input[type="range"] {
+  width: 100%;                    /* Full width */
+  padding: 10px 14px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1.8px solid #ddd;       /* Light border */
+  background-color: #fafafa;      /* Light background */
+  transition: border-color 0.25s ease;
+  cursor: pointer;
+  appearance: none;               /* Remove native styling */
+}
+
+/* Hover states for select and range inputs */
+.shopping-menu select:hover,
+.menu-filters input[type="range"]:hover {
+  border-color: #e5004c;          /* Pink/red border on hover */
+  box-shadow: 0 0 8px rgba(229, 0, 76, 0.3); /* Soft glow */
+}
+
+/* Focus states for accessibility */
+.shopping-menu select:focus,
+.menu-filters input[type="range"]:focus {
+  border-color: #e5004c;
+  outline: none;
+  box-shadow: 0 0 12px rgba(229, 0, 76, 0.5); /* Stronger glow */
+}
+
+/* Wrapper for range input and its label */
+.filter-range {
+  margin-bottom: 1.3rem;
+}
+
+/* Label for range inputs - flex for label + value alignment */
+.filter-range label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Strong emphasis for range value */
+.filter-range strong {
+  color: #e5004c;
+  font-weight: 700;
+}
+
+/* Generic labels inside menu filters */
+.menu-filters label {
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 0.75rem;
+  cursor: pointer;
+  user-select: none; /* Prevent text selection */
+  gap: 0.5rem;       /* Space between label text and input */
+}
+
+/* Checkbox styling */
+.menu-filters input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #e5004c;          /* Pink/red checkbox */
+  transition: transform 0.15s ease;
+}
+
+/* Slight scaling on hover for better UX */
+.menu-filters input[type="checkbox"]:hover {
+  transform: scale(1.15);
+}
+
+/* Reset button styles */
+.reset-btn, .filter-menu {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 12px 0;
+  font-weight: 700;
+  font-size: 1.1rem;
+  background: #e5004c;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(229, 0, 76, 0.4);
+}
+
+/* Hover effect on reset button */
+.reset-btn:hover {
+  background-color: #b7003a;
+  box-shadow: 0 6px 20px rgba(183, 0, 58, 0.6);
+}
+
+/* Styling for the first h4 header inside shopping-menu */
+.shopping-menu h4:first-of-type {
+  border-left: none;              /* Remove left border */
+  color: #333;                   /* Darker color */
+  text-transform: none;          /* Normal case */
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .shopping-menu {
+    position: static;             /* Remove fixed positioning */
+    width: 100%;                 /* Full width */
+    height: auto;                /* Let height grow naturally */
+    border-radius: 0;            /* Remove rounded corners */
+    box-shadow: none;            /* Remove shadow */
+    padding: 1rem;
+  }
+}
