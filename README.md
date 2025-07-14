@@ -22,4 +22,14 @@ Frontend and backend are separate — run both servers for full functionality.
 
 Errors like loading issues or failed API calls may occur if the backend isn’t running.
 
-The frontend is inside the server/ folder — double-check your paths.
+The frontend is currently located inside the server/ folder — so make sure to double-check your file paths.
+
+You will likely encounter problems when rendering the frontend.
+To avoid these issues, I recommend creating a separate client folder using the following command: npx create-react-app client
+
+Then, move the contents of server/src and server/public into the new client/ folder.
+Your updated project structure should look like this: 
+/client         ← React frontend
+/server         ← Node.js + Express backend
+.env
+
