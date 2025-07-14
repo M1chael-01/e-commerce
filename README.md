@@ -1,34 +1,23 @@
+📁 Project Structure
+This project was bootstrapped with React and is split into two main parts:
+
 🔙 Backend (/server)
 Built with Node.js and Express
 
-Handles:
+Handles API routes, Stripe payments, and PostgreSQL database
 
-API routes
+Location: server/
 
-Authentication
-
-Stripe payments
-
-Database interactions (PostgreSQL)
-
-📂 Located in the server/ directory
-
-🔜 Frontend (/client) (inside the server folder)
+🔜 Frontend (/client)
 Built with React.js
 
-Handles:
+Manages UI, product pages, cart, and Stripe checkout
 
-User interface
+Location: server/client/
 
-Product listings
+⚠️ Important Notes
+Frontend and backend are separate — run both servers for full functionality.
 
-Shopping cart
+Errors like loading issues or failed API calls may occur if the backend isn’t running.
 
-Stripe checkout
-
-📂 Located in the server/client/ directory
-
-⚠️ The frontend is nested inside the backend folder (/server) — make sure you're navigating correctly when working in each section.
-
-⚠️ Note on Running the Project
-Since the frontend and backend are separated, you'll need to run both servers independently for the app to work correctly.
+The frontend is inside the server/ folder — double-check your paths.
