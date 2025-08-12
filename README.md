@@ -1,5 +1,7 @@
 <img width="1902" height="886" alt="Snímek obrazovky 2025-07-14 223514" src="https://github.com/user-attachments/assets/461bb5f9-c6b4-4028-896d-6bbc057a0147" />
 
+Video: https://www.youtube.com/watch?v=uTkPwmhwV44
+
 📁 Project Structure
 This project was bootstrapped with React and is split into two main parts:
 
