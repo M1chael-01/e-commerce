@@ -1,0 +1,45 @@
+📂 Frontend (app)
+npx create-react-app my-app
+npm install @fortawesome/free-solid-svg-icons@^6.7.2 \
+@fortawesome/react-fontawesome@^0.2.2 \
+@testing-library/dom@^10.4.0 \
+@testing-library/jest-dom@^6.6.3 \
+@testing-library/react@^16.3.0 \
+@testing-library/user-event@^13.5.0 \
+debounce@^2.2.0 \
+framer-motion@^12.19.2 \
+fuse.js@^7.1.0 \
+js-cookie@^3.0.5 \
+leaflet@^1.9.4 \
+react@^19.1.0 \
+react-dom@^19.1.0 \
+react-icons@^5.5.0 \
+react-leaflet@^5.0.0 \
+react-medium-image-zoom@^5.2.14 \
+react-router-dom@^7.6.2 \
+react-scripts@5.0.1 \
+string-similarity@^4.0.4 \
+web-vitals@^2.1.4
+
+
+📂 Backend (server)
+npm install --save-dev nodemon@^3.1.10
+npm install @stripe/stripe-js@^7.4.0 \
+@tensorflow/tfjs@^4.22.0 \
+bcrypt@^6.0.0 \
+cookie-parser@^1.4.7 \
+cors@^2.8.5 \
+csurf@^1.11.0 \
+dotenv@^17.1.0 \
+express@^5.1.0 \
+express-rate-limit@^7.5.1 \
+express-session@^1.18.1 \
+express-validator@^7.2.1 \
+helmet@^8.1.0 \
+jsonwebtoken@^9.0.2 \
+morgan@^1.10.0 \
+pg@^8.16.3 \
+sequelize@^6.37.7 \
+sqlite3@^5.1.7 \
+string-similarity@^4.0.4 \
+stripe@^18.3.0
